@@ -1,0 +1,148 @@
+% A mindmap showing TeX online projects supported
+% by DANTE e.V. which sponsors their server costs.
+% Author: Stefan Kottwitz
+\documentclass[border=10pt]{standalone}
+%%%<
+\usepackage{verbatim}
+%%%>
+\begin{comment}
+:Title: A mindmap showing TeX projects supported by DANTE e.V
+:Tags: Mindmaps
+:Author: Stefan Kottwitz
+:Slug: servers
+
+A mindmap showing TeX projects supported by DANTE e.V.,
+the german language TeX user group with home page
+at www.dante.de
+
+DANTE sponsors their server costs for the web sites
+shown in the mindmap.
+
+- TeX forums
+- TeX galleries
+- TeX blogs
+- Tools, documentation and FAQ
+
+Less for explanation, as the code has been done quick
+and far from perfect, but is shown here to share.
+\end{comment}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz}
+\usetikzlibrary{mindmap,shadows}
+\usepackage[hidelinks,pdfencoding=auto]{hyperref}
+
+\hyphenation{Time-stamp Ca-pa-bi-li-ties Sa-tu-ra-ted He-mo-glo-bin stop-ped Cumu-lative Revolu-tions Latest Cadence}
+
+% Information boxes
+\newcommand*{\info}[4][16.3]{%
+  \node [ annotation, #3, scale=1, minimum width = #1em,
+          inner sep = 2mm ] at (#2) {%
+  \list{$\bullet$}{\topsep=0pt\itemsep=0pt\parsep=0pt
+    \parskip=0pt\labelwidth=8pt\leftmargin=8pt
+    \itemindent=0pt\labelsep=2pt}%
+    #4
+  \endlist
+  };
+}
+
+
+
+\begin{document}
+\begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white, font = \Large}]
+  \path[mindmap,concept color=black!40,text=white,
+    every node/.style={concept,circular},
+    root/.style    = {concept color=black!40,
+      font=\large\bfseries,minimum width=10em},
+    level 1 concept/.append style={font=\Large\bfseries,
+      sibling angle=50,minimum width=5em,
+    level distance=23em,inner sep=0pt},
+    level 2 concept/.append style={font=\large\bfseries,level distance=12em, minimum width=6em},
+    level 3 concept/.append style={font=\large\bfseries,level distance=13em, minimum width=6em},
+  ]
+  node[root] {ANT+ device name, ANT+ device status, ANT+ device number, Battery status, Manufacturer identification, Manufacturer specific data, ANT+ signal strength, Product information} [clockwise from=0]
+    child[concept color=blue!60] {
+      node {Bicykle power} [clockwise from=90]
+        child { node {Torque Speed} }
+        child { node {Torque Cadence}}
+        child { node {Torque Effectiveness and Pedal Smoothness}}
+    }
+    child[concept color=blue] {
+      node[concept] {Bicycle Speed and Cadence}
+        [clockwise from=360]
+      child { node[concept] (TeXnique)
+        {Speed Sensor} 
+        [clockwise from=20]
+          child {node {\hspace{0pt}Latest Speed Event Time}} 
+          child {node {\hspace{0pt}Cumulative Wheel Revolutions}}
+          child {node {\hspace{0pt}Stopped flag}}
+        }
+      child { node[concept] (TeXweltQA)
+        {Cadence Sensor}
+        [clockwise from=320]
+          child {node {\hspace{0pt}Latest Cadence Event Time}} 
+          child {node {\hspace{0pt}Cumulative Pedal Revolutions}}
+          child {node {\hspace{0pt}Stopped flag}}
+        }
+    }
+    child[concept color=green!40!black] {
+      node[concept] {Blood Pressure}
+        [clockwise from=350]
+      child { node[concept] (TikZGalerie) 
+        {Systolic} }
+      child { node[concept] (TeXampleBlog)
+        {Diastolic} }
+      child { node[concept] (Planet)
+        {\hspace{0pt}Timestamp} }        
+      child { node[concept] (Planet)
+        {Mean Arterial} }  
+      child { node[concept] (Planet)
+        {Morning / evening} }  
+      child { node[concept] (Planet)
+        {Heart Rate} }          
+    }
+    child[concept color=red] {
+      node[concept] (PGFPlots) {Heart Rate Monitor}
+      [clockwise from=260]
+        child { node[concept] {Last Heart Beat} 
+        }
+        child { node[concept] {Time of Previous Heart Beat} 
+        }
+        child { node[concept] {Heart Beat Count} 
+        }
+        child { node[concept] {Heart Rate} 
+        }
+      }
+    child[concept color=red!60!black] {
+      node[concept] {Muscle Oxygen Monitor}
+      [clockwise from=200]
+      child { node[concept] (LaTeXForum)
+        {\hspace{0pt}Hemoglobin Concentration}}
+      child { node[concept] (LaTeXArtikel)
+        {\hspace{0pt}Saturated Hemoglobin} }
+      child { node[concept] (LaTeXNews)
+        {\hspace{0pt}Capabilities}} 
+    }
+    child[concept color=orange] {
+      node[concept] (TeXdoc)
+        {Weight Scale}
+        [counterclockwise from=340]
+        child { node{\hspace{0pt}Hydration}}
+        child { node[concept] {Body fat}}
+        child { node[concept] {Active, Basal Metabolic Rate}}
+        child { node[concept] {Muscle Mass}}
+        child { node[concept] {Bone Mass}}
+        }
+    child[concept color=yellow!60!black] {
+      node[concept] (Blogs) {Stride, Speed, Distance} [counterclockwise from=290]
+      child { node[concept] {Distance}}
+      child { node[concept] {Speed} } 
+      child { node[concept] (Calories)
+        {Calories} }
+      child { node[concept] (Calories)
+        {Stride Count} }  
+    };
+
+\end{tikzpicture}
+\end{document}
