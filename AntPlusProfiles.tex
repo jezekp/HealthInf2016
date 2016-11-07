@@ -32,7 +32,7 @@ and far from perfect, but is shown here to share.
 \usetikzlibrary{mindmap,shadows}
 \usepackage[hidelinks,pdfencoding=auto]{hyperref}
 
-\hyphenation{Time-stamp Ca-pa-bi-li-ties Sa-tu-ra-ted He-mo-glo-bin stop-ped Cumu-lative Revolu-tions Latest Cadence}
+\hyphenation{Time-stamp Ca-pa-bi-li-ties Sa-tu-ra-ted He-mo-glo-bin stopped Cumu-lative Revolu-tions Latest Cadence Effective-ness}
 
 % Information boxes
 \newcommand*{\info}[4][16.3]{%
@@ -59,11 +59,11 @@ and far from perfect, but is shown here to share.
       sibling angle=50,minimum width=5em,
     level distance=23em,inner sep=0pt},
     level 2 concept/.append style={font=\large\bfseries,level distance=12em, minimum width=6em},
-    level 3 concept/.append style={font=\large\bfseries,level distance=13em, minimum width=6em},
+    level 3 concept/.append style={font=\large\bfseries,level distance=16em, minimum width=6em},
   ]
   node[root] {ANT+ device name, ANT+ device status, ANT+ device number, Battery status, Manufacturer identification, Manufacturer specific data, ANT+ signal strength, Product information} [clockwise from=0]
     child[concept color=blue!60] {
-      node {Bicykle power} [clockwise from=90]
+      node {Bicykle power} [clockwise from=70]
         child { node {Torque Speed} }
         child { node {Torque Cadence}}
         child { node {Torque Effectiveness and Pedal Smoothness}}
