@@ -91,8 +91,6 @@ The presented framework serves mainly to designers and programmers of the system
 
 In this use-case we used the Garmin Premium Strap Heart Rate Monitor as a representative of ANT+ supporting devices. The Android SDK\footnote{http://developer.android.com/sdk/} was used to read ANT+ data into Android smart phones. We integrated this SDK into a custom mobile application MoBio\footnote{https://github.com/NEUROINFORMATICS-GROUP-FAV-KIV-ZCU/MoBio} that reads data from ANT+ sensors and store them on a~SD card. The user of MoBio can pair available sensors, record data and visualize them. This solution is available to a large number of users due to the existence of cheap Android smart phones and heart rate monitor straps on the market.
 
-Since our framework was also integrated into MoBio, recorded data can be stored in the NIX format. MoBio parses the record, metadata are transferred into a~structure with one section and several properties (see an example in Figure~\ref{odML}) and continuously read heart beats data are stored into the DataArray element (see an example in Figure~\ref{NIX-ex}). The Source element has an attribute metadata that contains a~link to the odML structure.
-
 \begin{figure}
 
 \dirtree{%
@@ -112,6 +110,11 @@ Since our framework was also integrated into MoBio, recorded data can be stored 
 \centering\includegraphics[width=11cm]{NIX-example.png}
 \caption{\label{NIX-ex}Heart rate record in the NIX format}
 \end{figure*}
+
+
+Since our framework was also integrated into MoBio, recorded data can be stored in the NIX format. MoBio parses the record, metadata are transferred into a~structure with one section and several properties (see an example in Figure~\ref{odML}) and continuously read heart beats data are stored into the DataArray element (see an example in Figure~\ref{NIX-ex}). The Source element has an attribute metadata that contains a~link to the odML structure.
+
+
 
 
 Once the data and metadata are stored they can be transferred to a suitable database. Figure~\ref{fig:EEGBase} shows the metadata stored and visualized in EEGBase. A~complete description of the experiment contains metadata from the Heart Rate strap. The raw data are stored as well.
